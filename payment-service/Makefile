@@ -11,3 +11,9 @@ test_payment:
 
 test_payment_status:
 	curl -X POST http://localhost:8080/get_payment_status -H "Content-Type: application/json" -d '{"transactionId": "txn_20241009235855"}'
+
+docker_build_rest:
+	docker build -t gcr.io/$(PROJECT_ID)/rest-java-service:v1 -f Dockerfile .
+
+docker_push_rest:
+	docker push gcr.io/$(PROJECT_ID)/rest-java-service:v1
