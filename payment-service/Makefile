@@ -17,3 +17,6 @@ docker_build_rest:
 
 docker_push_rest:
 	docker push gcr.io/$(PROJECT_ID)/rest-java-service:v1
+
+connect_to_vm:
+	gcloud compute ssh java-rest-service --zone=europe-west6-a
